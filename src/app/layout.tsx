@@ -1,14 +1,68 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
+const siteUrl = "https://copachapachapa.vercel.app";
 
 export const metadata: Metadata = {
-  title: "Copa Chapa Chapa | Simracing Championship",
-  description: "Copa Chapa Chapa — Campeonato oficial de Assetto Corsa",
+  title: {
+    default: "Copa Chapa Chapa | Simracing Championship",
+    template: "%s | Copa Chapa Chapa",
+  },
+  description:
+    "Copa Chapa Chapa — Campeonato oficial de simracing en Assetto Corsa. +80 pilotos, 4 fechas, formato de splits. Competí y sumate a la grilla más grande del país.",
+  keywords: [
+    "simracing",
+    "assetto corsa",
+    "copa chapa chapa",
+    "campeonato simracing",
+    "carreras virtuales",
+    "argentina simracing",
+    "competicion automovilismo virtual",
+  ],
+  authors: [{ name: "Copa Chapa Chapa" }],
+  creator: "Copa Chapa Chapa",
+  publisher: "Copa Chapa Chapa",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: siteUrl,
+    siteName: "Copa Chapa Chapa",
+    title: "Copa Chapa Chapa | Simracing Championship",
+    description:
+      "Campeonato oficial de simracing en Assetto Corsa. +80 pilotos, formato de splits, 4 fechas. Competí en la copa más picante del país.",
+    images: [
+      {
+        url: "/assets/images/banner.webp",
+        width: 1920,
+        height: 1080,
+        alt: "Copa Chapa Chapa Banner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Copa Chapa Chapa | Simracing Championship",
+    description:
+      "Campeonato oficial de simracing en Assetto Corsa. +80 pilotos, 4 fechas.",
+    images: ["/assets/images/banner.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
-    icon: "/assets/images/isotipo_cc.png",
-    apple: "/assets/images/isotipo_cc.png",
+    icon: "/assets/images/isotipo_cc.webp",
+    apple: "/assets/images/isotipo_cc.webp",
+    shortcut: "/assets/images/isotipo_cc.webp",
   },
 };
 

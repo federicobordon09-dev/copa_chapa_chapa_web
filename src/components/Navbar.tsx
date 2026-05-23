@@ -51,13 +51,10 @@ export default function Navbar() {
       <div className="container">
         <Link href="/" className="nav-logo">
           <img
-            src="/assets/images/isotipo_cc.png"
+            src="/assets/images/isotipo_cc.webp"
             alt="Logo Copa Chapa Chapa"
             className="nav-logo-img"
           />
-          <div className="nav-logo-text">
-            COPA <span>CHAPA</span> CHAPA
-          </div>
         </Link>
         <ul className={`nav-links${isOpen ? " open" : ""}`}>
           {navLinks.map((l) => (
@@ -72,15 +69,9 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <a
-              href="https://forms.gle/qM9xcAmAm1hsYPSX6"
-              target="_blank"
-              rel="noopener"
-              className="nav-cta"
-              onClick={close}
-            >
-              Inscribite
-            </a>
+            <span className="nav-cta nav-cta--closed">
+              Inscripciones cerradas
+            </span>
           </li>
         </ul>
         <button

@@ -165,7 +165,7 @@ export default function ClasificacionPage() {
                     <div className="split-header">
                       <span className="split-label">{split.label}</span>
                       <span className="split-circuit">
-                        {r.id === "bsas" ? "Buenos Aires" : "Comodoro"}
+                        {r.id === "como" ? "Comodoro" : "Buenos Aires"}
                       </span>
                     </div>
                     <table className="split-table">

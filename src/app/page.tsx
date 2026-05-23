@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Countdown from "@/components/Countdown";
 
 import Footer from "@/components/Footer";
 import { top5Preview } from "@/data/standings";
+
+export const metadata: Metadata = {
+  title: "Inicio",
+  description:
+    "Copa Chapa Chapa — Campeonato de simracing en Assetto Corsa. +80 pilotos compitiendo en la temporada 2026. Seguí la clasificación, el calendario y más.",
+};
 
 export default function HomePage() {
   return (
@@ -11,7 +18,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-bg">
           <img
-            src="/assets/images/banner.png"
+            src="/assets/images/banner.webp"
             alt="Copa Chapa Chapa Banner"
             className="hero-bg-img"
           />
@@ -105,7 +112,7 @@ export default function HomePage() {
                     <div className="standings-driver">{row.name.toUpperCase()}</div>
                     <div className="standings-team" />
                   </td>
-                  <td className="standings-team">2 Fechas</td>
+                  <td className="standings-team">Gol G3 · Corsa</td>
                   <td className="standings-pts">{row.total}</td>
                 </tr>
               ))}

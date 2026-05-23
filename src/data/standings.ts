@@ -94,48 +94,8 @@ export interface RaceData {
 
 export const races: RaceData[] = [
   {
-    id: "bsas",
-    label: "📍 Fecha 1 — Buenos Aires",
-    splits: [
-      {
-        label: "Split 1",
-        results: [
-          { pos: 1, name: "Alejandro Rodriguez", pts: 25 },
-          { pos: 2, name: "Joaquin Gutierrez", pts: 22 },
-          { pos: 3, name: "Damian Ludueña", pts: 19 },
-          { pos: 4, name: "Agustin Carreras", pts: 17 },
-          { pos: 5, name: "Agustin Moles", pts: 15 },
-          { pos: 6, name: "Uriel Manzanelli", pts: 13 },
-          { pos: 7, name: "Matias Pacheco", pts: 11 },
-          { pos: 8, name: "Matias Cayrus Riffel", pts: 9 },
-          { pos: 9, name: "Nico Valero", pts: 7 },
-          { pos: 10, name: "Franco Guerreros", pts: 5 },
-          { pos: 11, name: "Agustin Rojas", pts: 3 },
-          { pos: 12, name: "Lucas Morel", pts: 1 },
-        ],
-      },
-      {
-        label: "Split 2",
-        results: [
-          { pos: 1, name: "Bruno Koller", pts: 25 },
-          { pos: 2, name: "Santino Casciano", pts: 22 },
-          { pos: 3, name: "Matteo Viñas", pts: 19 },
-          { pos: 4, name: "Franco Perez", pts: 17 },
-          { pos: 5, name: "Julian Varlas", pts: 15 },
-          { pos: 6, name: "Gonzalo Alonso", pts: 13 },
-          { pos: 7, name: "Agustin Chijanoski", pts: 11 },
-          { pos: 8, name: "Fabian Gamero", pts: 9 },
-          { pos: 9, name: "Agustin Savone", pts: 7 },
-          { pos: 10, name: "Eric Priemer", pts: 5 },
-          { pos: 11, name: "Santiago Ortiz Ocampo", pts: 3 },
-          { pos: 12, name: "Marcos Turri", pts: 1 },
-        ],
-      },
-    ],
-  },
-  {
     id: "como",
-    label: "📍 Fecha 2 — Comodoro",
+    label: "📍 Fecha 1 — Comodoro",
     splits: [
       {
         label: "Split 1",
@@ -169,6 +129,46 @@ export const races: RaceData[] = [
           { pos: 10, name: "Matias Pacheco", pts: 5 },
           { pos: 11, name: "Luka Sanchez", pts: 3 },
           { pos: 12, name: "Nico Valero", pts: 1 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "bsas",
+    label: "📍 Fecha 2 — Buenos Aires",
+    splits: [
+      {
+        label: "Split 1",
+        results: [
+          { pos: 1, name: "Alejandro Rodriguez", pts: 25 },
+          { pos: 2, name: "Joaquin Gutierrez", pts: 22 },
+          { pos: 3, name: "Damian Ludueña", pts: 19 },
+          { pos: 4, name: "Agustin Carreras", pts: 17 },
+          { pos: 5, name: "Agustin Moles", pts: 15 },
+          { pos: 6, name: "Uriel Manzanelli", pts: 13 },
+          { pos: 7, name: "Matias Pacheco", pts: 11 },
+          { pos: 8, name: "Matias Cayrus Riffel", pts: 9 },
+          { pos: 9, name: "Nico Valero", pts: 7 },
+          { pos: 10, name: "Franco Guerreros", pts: 5 },
+          { pos: 11, name: "Agustin Rojas", pts: 3 },
+          { pos: 12, name: "Lucas Morel", pts: 1 },
+        ],
+      },
+      {
+        label: "Split 2",
+        results: [
+          { pos: 1, name: "Bruno Koller", pts: 25 },
+          { pos: 2, name: "Santino Casciano", pts: 22 },
+          { pos: 3, name: "Matteo Viñas", pts: 19 },
+          { pos: 4, name: "Franco Perez", pts: 17 },
+          { pos: 5, name: "Julian Varlas", pts: 15 },
+          { pos: 6, name: "Gonzalo Alonso", pts: 13 },
+          { pos: 7, name: "Agustin Chijanoski", pts: 11 },
+          { pos: 8, name: "Fabian Gamero", pts: 9 },
+          { pos: 9, name: "Agustin Savone", pts: 7 },
+          { pos: 10, name: "Eric Priemer", pts: 5 },
+          { pos: 11, name: "Santiago Ortiz Ocampo", pts: 3 },
+          { pos: 12, name: "Marcos Turri", pts: 1 },
         ],
       },
     ],

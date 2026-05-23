@@ -1,9 +1,15 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import Countdown from "@/components/Countdown";
 
 import Footer from "@/components/Footer";
 import { calendarEntries } from "@/data/calendar";
+
+export const metadata: Metadata = {
+  title: "Calendario",
+  description:
+    "Calendario de la Copa Chapa Chapa 2026. 4 fechas de simracing en Assetto Corsa en circuitos argentinos e internacionales.",
+};
 
 export default function CalendarioPage() {
   return (
@@ -100,12 +106,12 @@ export default function CalendarioPage() {
             </div>
           </div>
           <div style={{ marginTop: "var(--space-md)", display: "flex", gap: "var(--space-sm)", flexWrap: "wrap" }}>
-            <a href="https://www.twitch.tv/tomikka" target="_blank" rel="noopener"
+            <a href="https://www.twitch.tv/tomikka" target="_blank" rel="noopener noreferrer"
                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-heading)", fontSize: "var(--fs-small)", fontWeight: 700, letterSpacing: "0.06em", color: "#9146ff", background: "rgba(145,70,255,0.08)", border: "1px solid rgba(145,70,255,0.2)", padding: "0.5rem 1.2rem", borderRadius: 999, transition: "all 0.2s ease", textDecoration: "none" }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="#9146ff"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
               Ver en Twitch · Tomikka
             </a>
-            <a href="https://www.twitch.tv/maticunial" target="_blank" rel="noopener"
+            <a href="https://www.twitch.tv/maticunial" target="_blank" rel="noopener noreferrer"
                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-heading)", fontSize: "var(--fs-small)", fontWeight: 700, letterSpacing: "0.06em", color: "#9146ff", background: "rgba(145,70,255,0.08)", border: "1px solid rgba(145,70,255,0.2)", padding: "0.5rem 1.2rem", borderRadius: 999, transition: "all 0.2s ease", textDecoration: "none" }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="#9146ff"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
               Ver en Twitch · Maticunial

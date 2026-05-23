@@ -1,7 +1,13 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Campeonato",
+  description:
+    "Información del campeonato Copa Chapa Chapa 2026: formato, reglamento, sistema de puntos, organizadores y más.",
+};
 
 const points = [
   { pos: "1°", val: "25", cls: "p1" },
@@ -128,7 +134,7 @@ export default function CampeonatoPage() {
               <div className="org-name">Tomikka</div>
               <span className="org-role">Fundador &amp; Organizador</span>
               <p className="org-desc" />
-              <a href="https://www.twitch.tv/tomikka" target="_blank" rel="noopener" className="org-twitch">
+              <a href="https://www.twitch.tv/tomikka" target="_blank" rel="noopener noreferrer" className="org-twitch">
                 <svg className="twitch-icon" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z" /></svg>
                 twitch.tv/tomikka
               </a>
@@ -138,7 +144,7 @@ export default function CampeonatoPage() {
               <div className="org-name">Maticunial</div>
               <span className="org-role">Fundador &amp; Organizador</span>
               <p className="org-desc" />
-              <a href="https://www.twitch.tv/maticunial" target="_blank" rel="noopener" className="org-twitch">
+              <a href="https://www.twitch.tv/maticunial" target="_blank" rel="noopener noreferrer" className="org-twitch">
                 <svg className="twitch-icon" viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z" /></svg>
                 twitch.tv/maticunial
               </a>
@@ -147,21 +153,6 @@ export default function CampeonatoPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section" style={{ textAlign: "center", padding: "var(--space-xl) 0" }}>
-        <div className="container">
-          <span className="section-eyebrow">¿Listo para correr?</span>
-          <h2 className="section-title" style={{ color: "var(--color-black)", marginBottom: "var(--space-sm)" }}>
-            Sumate a la temporada
-          </h2>
-          <p style={{ color: "var(--color-gray-dark)", marginBottom: "var(--space-md)", fontSize: "1rem" }}>
-            Cupos limitados. Completá el formulario y asegurá tu lugar en la grilla.
-          </p>
-          <a href="https://forms.gle/qM9xcAmAm1hsYPSX6" target="_blank" rel="noopener" className="btn btn-primary" style={{ fontSize: "1rem", padding: "1rem 2.5rem" }}>
-            Inscribite ahora →
-          </a>
-        </div>
-      </section>
 
       <Footer showOrganizadores />
     </>
