@@ -37,8 +37,8 @@ export default function HomePage() {
               Acá se separan los que están para competir de los que no lo están
             </p>
             <div className="hero-actions">
-              <Link href="/clasificacion" className="btn btn-primary">
-                Ver Clasificación →
+              <Link href="/copa-chapa-chapa" className="btn btn-primary">
+                Ver Copa Chapa Chapa →
               </Link>
               <Link href="/campeonato" className="btn btn-outline">
                 Conocé el campeonato
@@ -120,7 +120,7 @@ export default function HomePage() {
           </table>
 
           <div style={{ marginTop: "var(--space-md)" }}>
-            <Link href="/clasificacion" className="btn btn-outline">
+            <Link href="/copa-chapa-chapa" className="btn btn-outline">
               Ver clasificación completa →
             </Link>
           </div>

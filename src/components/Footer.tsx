@@ -23,9 +23,8 @@ export default function Footer({ showOrganizadores }: FooterProps) {
             <ul className="footer-links">
               <li><Link href="/">Inicio</Link></li>
               <li><Link href="/campeonato">Campeonato</Link></li>
-              <li><Link href="/clasificacion">Clasificación</Link></li>
+              <li><Link href="/copa-chapa-chapa">Copa Chapa Chapa</Link></li>
               <li><Link href="/calendario">Calendario</Link></li>
-              <li><Link href="/pilotos">Pilotos</Link></li>
             </ul>
           </div>
           <div className="footer-col">

@@ -1,3 +1,5 @@
+import { getTeam } from "./teams";
+
 export interface Driver {
   num: string;
   initials: string;
@@ -5,9 +7,10 @@ export interface Driver {
   pts: number;
   split: string;
   avatarGradient: string;
+  team: string;
 }
 
-export const drivers: Driver[] = [
+const rawDrivers = [
   { num: "01", initials: "DL", name: "Damian Ludueña", pts: 44, split: "Split 2 Comodoro", avatarGradient: "linear-gradient(135deg,#F5C400,#c9a000)" },
   { num: "02", initials: "FP", name: "Franco Perez", pts: 36, split: "Split 2 Comodoro", avatarGradient: "linear-gradient(135deg,#e84040,#a01c1c)" },
   { num: "03", initials: "SC", name: "Santino Casciano", pts: 35, split: "Split 1 Bs Aires", avatarGradient: "linear-gradient(135deg,#4090e8,#1a5cb0)" },
@@ -75,5 +78,10 @@ export const drivers: Driver[] = [
   { num: "65", initials: "TF", name: "Thiago Falivene", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#d980fa,#a040c0)" },
   { num: "66", initials: "VC", name: "Valentin Corts", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#82ccdd,#5090a0)" },
 ];
+
+export const drivers: Driver[] = rawDrivers.map((d) => ({
+  ...d,
+  team: getTeam(d.name),
+}));
 
 export const top3 = drivers.slice(0, 3);

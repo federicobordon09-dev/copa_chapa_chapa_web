@@ -6,6 +6,7 @@ export interface StandingsRow {
   f2s1: string;
   f2s2: string;
   total: number;
+  status?: string;
 }
 
 export const standings: StandingsRow[] = [
@@ -14,7 +15,7 @@ export const standings: StandingsRow[] = [
   { pos: 3, name: "Santino Casciano", f1s1: "22", f1s2: "—", f2s1: "13", f2s2: "—", total: 35 },
   { pos: 4, name: "Fabian Gamero", f1s1: "9", f1s2: "—", f2s1: "25", f2s2: "—", total: 34 },
   { pos: 5, name: "Julian Varlas", f1s1: "15", f1s2: "—", f2s1: "—", f2s2: "17", total: 32 },
-  { pos: 6, name: "Alejandro Rodriguez", f1s1: "25", f1s2: "—", f2s1: "—", f2s2: "—", total: 25 },
+  { pos: 6, name: "Alejandro Rodriguez", f1s1: "25", f1s2: "—", f2s1: "—", f2s2: "—", total: 25, status: "SUSPENDIDO" },
   { pos: 7, name: "Bruno Koller", f1s1: "—", f1s2: "25", f2s1: "—", f2s2: "—", total: 25 },
   { pos: 8, name: "Marcos Turri", f1s1: "1", f1s2: "—", f2s1: "22", f2s2: "—", total: 23 },
   { pos: 9, name: "Agustin Carreras", f1s1: "17", f1s2: "—", f2s1: "5", f2s2: "—", total: 22 },
@@ -81,6 +82,7 @@ export interface SplitResult {
   pos: number;
   name: string;
   pts: number;
+  status?: string;
 }
 
 export interface RaceData {
@@ -140,7 +142,7 @@ export const races: RaceData[] = [
       {
         label: "Split 1",
         results: [
-          { pos: 1, name: "Alejandro Rodriguez", pts: 25 },
+          { pos: 1, name: "Alejandro Rodriguez", pts: 25, status: "SUSPENDIDO" },
           { pos: 2, name: "Joaquin Gutierrez", pts: 22 },
           { pos: 3, name: "Damian Ludueña", pts: 19 },
           { pos: 4, name: "Agustin Carreras", pts: 17 },

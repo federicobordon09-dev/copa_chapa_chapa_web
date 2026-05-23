@@ -7,9 +7,8 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/campeonato", label: "Campeonato" },
-  { href: "/clasificacion", label: "Clasificación" },
+  { href: "/copa-chapa-chapa", label: "Copa Chapa Chapa" },
   { href: "/calendario", label: "Calendario" },
-  { href: "/pilotos", label: "Pilotos" },
 ];
 
 export default function Navbar() {
