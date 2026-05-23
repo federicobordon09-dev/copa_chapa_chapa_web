@@ -51,7 +51,7 @@ export default function PilotosPage() {
                 }}
               >
                 <div style={{ position: "absolute", top: -1, left: 0, right: 0, height: 3, background: medalBarColors[i], borderRadius: "var(--radius-md) var(--radius-md) 0 0" }} />
-                {i === 0 && <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>👑</div>}
+                {i === 0 && <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}></div>}
                 <div style={{ fontFamily: "var(--font-display)", fontSize: i === 0 ? "3rem" : "3rem", color: medalPosColors[i], lineHeight: 1, marginTop: i === 0 ? 0 : "3.5rem" }}>
                   {i + 1}
                 </div>
