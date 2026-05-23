@@ -15,7 +15,7 @@ export default function CalendarioPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Temporada 2026"
+        eyebrow="Temporada 1"
         title="Calendario"
         subtitle="4 Fechas · 2 Disputadas · 2 Por correr"
       />

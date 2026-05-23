@@ -30,7 +30,7 @@ const infoBlocks = [
   { icon: "📅", title: "4 Fechas · Temporada 1", text: "Cuatro citas en circuitos argentinos e internacionales. Los puntos de cada fecha se acumulan en la tabla general." },
   { icon: "🏆", title: "Tabla General", text: "Al final de la temporada, el piloto con más puntos acumulados se corona Campeón de la Copa Chapa Chapa." },
   { icon: "🌐", title: "Online", text: "Las carreras se disputan en servidor privado. La organización gestiona la inscripción, los servers y los resultados." },
-  { icon: "👥", title: "+80 Pilotos", text: "La primera temporada convocó a más de 80 pilotos de distintas ciudades del país. La grilla más grande hasta la fecha." },
+  { icon: "👥", title: "+60 Pilotos", text: "La primera temporada convocó a más de 80 pilotos de distintas ciudades del país. La grilla más grande hasta la fecha." },
 ];
 
 const rules = [
@@ -48,7 +48,7 @@ export default function CampeonatoPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Temporada 2026"
+        eyebrow="Temporada 1"
         title="El Campeonato"
         subtitle="Formato · Reglamento · Sistema de puntos"
       />

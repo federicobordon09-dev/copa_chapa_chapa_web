@@ -8,7 +8,7 @@ import { top5Preview } from "@/data/standings";
 export const metadata: Metadata = {
   title: "Inicio",
   description:
-    "Copa Chapa Chapa — Campeonato de simracing en Assetto Corsa. +80 pilotos compitiendo en la temporada 2026. Seguí la clasificación, el calendario y más.",
+    "Copa Chapa Chapa — Campeonato de simracing en Assetto Corsa. +60 pilotos compitiendo en la temporada 2026. Seguí la clasificación, el calendario y más.",
 };
 
 export default function HomePage() {
@@ -26,7 +26,7 @@ export default function HomePage() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-badge">
-              Assetto Corsa &nbsp;·&nbsp; Temporada 2026
+              Assetto Corsa &nbsp;·&nbsp; Temporada 1
             </div>
             <h1 className="hero-title">
               Copa<br />
@@ -46,7 +46,7 @@ export default function HomePage() {
             </div>
             <div className="hero-stats">
               <div className="hero-stat">
-                <span className="hero-stat-number">+80</span>
+                <span className="hero-stat-number">+60</span>
                 <span className="hero-stat-label">Pilotos</span>
               </div>
               <div className="hero-stat">
@@ -89,7 +89,7 @@ export default function HomePage() {
       <section className="section section-dark">
         <div className="container">
           <div className="section-header">
-            <span className="section-eyebrow">Temporada 2026</span>
+            <span className="section-eyebrow">Temporada 1</span>
             <h2 className="section-title">Clasificación General</h2>
           </div>
 

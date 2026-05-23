@@ -82,7 +82,7 @@ export default function CopaChapaChapaPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Temporada 2026"
+        eyebrow="Temporada 1"
         title="Copa Chapa Chapa"
         subtitle="66 pilotos · 2 Fechas disputadas · 4 Splits completados"
       />
