@@ -22,7 +22,7 @@ function spClass(pos: number) {
 export default function ClasificacionPage() {
   const [activeTab, setActiveTab] = useState(races[0].id);
   const [page, setPage] = useState(1);
-  const PER_PAGE = 15;
+  const PER_PAGE = 10;
   const totalPages = Math.ceil(standings.length / PER_PAGE);
   const paginated = standings.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
