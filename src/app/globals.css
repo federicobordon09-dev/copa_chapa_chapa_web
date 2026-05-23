@@ -2480,6 +2480,57 @@ input, textarea, select {
 }
 
 /* ════════════════════════════════════════════
+   SEARCH BAR
+════════════════════════════════════════════ */
+.search-bar {
+  position: relative;
+  max-width: 400px;
+  margin-bottom: var(--space-md);
+}
+
+.search-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-white);
+  background: var(--color-dark-mid);
+  border: 1px solid var(--color-gray-dark);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 2.5rem 0.6rem 1rem;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-input::placeholder {
+  color: var(--color-gray);
+  opacity: 0.7;
+}
+
+.search-input:focus {
+  border-color: var(--color-yellow-dim);
+  box-shadow: 0 0 0 2px rgba(245, 196, 0, 0.1);
+}
+
+.search-clear {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-gray);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.search-clear:hover {
+  color: var(--color-yellow);
+}
+
+/* ════════════════════════════════════════════
    PAGINATION
 ════════════════════════════════════════════ */
 .pagination {

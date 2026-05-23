@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import { standings, races } from "@/data/standings";
@@ -22,9 +22,15 @@ function spClass(pos: number) {
 export default function ClasificacionPage() {
   const [activeTab, setActiveTab] = useState(races[0].id);
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
   const PER_PAGE = 10;
-  const totalPages = Math.ceil(standings.length / PER_PAGE);
-  const paginated = standings.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+  const filtered = standings.filter((row) =>
+    row.name.toLowerCase().includes(search.toLowerCase())
+  );
+  const totalPages = Math.ceil(filtered.length / PER_PAGE) || 1;
+  const paginated = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+  useEffect(() => { setPage(1); }, [search]);
+  useEffect(() => { document.title = "Clasificación"; }, []);
 
   return (
     <>
@@ -69,6 +75,20 @@ export default function ClasificacionPage() {
             <h2 className="section-title" style={{ color: "var(--color-black)" }}>
               Tabla General
             </h2>
+          </div>
+          <div className="search-bar">
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Buscar por nombre o apellido..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            {search && (
+              <button className="search-clear" onClick={() => setSearch("")}>
+                ✕
+              </button>
+            )}
           </div>
           <div className="table-wrapper">
             <table className="cls-table">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import { drivers, top3 } from "@/data/drivers";
@@ -14,6 +14,7 @@ const medalPtsColors = ["var(--color-yellow)", "#c0c0c0", "#cd7f32"];
 
 export default function PilotosPage() {
   const [page, setPage] = useState(1);
+  useEffect(() => { document.title = "Pilotos"; }, []);
   const PER_PAGE = 12;
   const totalPages = Math.ceil(drivers.length / PER_PAGE);
   const paginated = drivers.slice((page - 1) * PER_PAGE, page * PER_PAGE);
@@ -67,7 +68,7 @@ export default function PilotosPage() {
       </section>
 
       {/* GRILLA COMPLETA */}
-      <section className="section" style={{ background: "var(--color-dark)" }}>
+      <section className="section section-dark">
         <div className="container">
           <div className="section-header">
             <span className="section-eyebrow">Todos los pilotos</span>

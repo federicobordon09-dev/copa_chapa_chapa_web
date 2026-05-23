@@ -5,10 +5,7 @@ import Navbar from "@/components/Navbar";
 const siteUrl = "https://copachapachapa.vercel.app";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Copa Chapa Chapa |",
-    template: "%s | Copa Chapa Chapa",
-  },
+  title: "Copa Chapa Chapa",
   description:
     "Copa Chapa Chapa — Campeonato oficial de simracing en Assetto Corsa. +80 pilotos, 4 fechas, formato de splits. Competí y sumate a la grilla más grande del país.",
   keywords: [
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: siteUrl,
     siteName: "Copa Chapa Chapa",
-    title: "Copa Chapa Chapa |",
+    title: "Copa Chapa Chapa",
     description:
       "Campeonato oficial de simracing en Assetto Corsa. +80 pilotos, formato de splits, 4 fechas. Competí en la copa más picante del país.",
     images: [
@@ -43,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Copa Chapa Chapa |",
+    title: "Copa Chapa Chapa",
     description:
       "Campeonato oficial de simracing en Assetto Corsa. +80 pilotos, 4 fechas.",
     images: ["/assets/images/banner.webp"],
