@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import PageHeader from "@/components/PageHeader";
-import ScrollReveal from "@/components/ScrollReveal";
 import Footer from "@/components/Footer";
 import { standings, races } from "@/data/standings";
 
@@ -22,13 +21,17 @@ function spClass(pos: number) {
 
 export default function ClasificacionPage() {
   const [activeTab, setActiveTab] = useState(races[0].id);
+  const [page, setPage] = useState(1);
+  const PER_PAGE = 15;
+  const totalPages = Math.ceil(standings.length / PER_PAGE);
+  const paginated = standings.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return (
     <>
       <PageHeader
         eyebrow="Temporada 2026"
         title="Clasificación"
-        subtitle="2 Fechas disputadas · 4 Splits completados"
+        subtitle="66 pilotos · 2 Fechas disputadas · 4 Splits completados"
       />
 
       {/* PODIO */}
@@ -81,7 +84,7 @@ export default function ClasificacionPage() {
                 </tr>
               </thead>
               <tbody>
-                {standings.map((row) => (
+                {paginated.map((row) => (
                   <tr key={row.pos} className={row.pos <= 3 ? "row-top3" : ""}>
                     <td className={`col-pos ${posClass(row.pos)}`}>
                       {String(row.pos).padStart(2, "0")}
@@ -98,6 +101,33 @@ export default function ClasificacionPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="pagination">
+            <button
+              className="pagination-btn"
+              onClick={() => setPage(page - 1)}
+              disabled={page === 1}
+            >
+              ← Anterior
+            </button>
+            <div className="pagination-pages">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                <button
+                  key={p}
+                  className={`pagination-page${page === p ? " active" : ""}`}
+                  onClick={() => setPage(p)}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+            <button
+              className="pagination-btn"
+              onClick={() => setPage(page + 1)}
+              disabled={page === totalPages}
+            >
+              Siguiente →
+            </button>
           </div>
           <p className="table-note">
             — Sin datos registrados para esa fecha/split. Los puntos con — indican

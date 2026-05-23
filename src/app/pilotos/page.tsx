@@ -1,5 +1,7 @@
+"use client";
+
+import { useState } from "react";
 import PageHeader from "@/components/PageHeader";
-import ScrollReveal from "@/components/ScrollReveal";
 import Footer from "@/components/Footer";
 import { drivers, top3 } from "@/data/drivers";
 
@@ -11,12 +13,17 @@ const medalPosColors = ["var(--color-yellow)", "#c0c0c0", "#cd7f32"];
 const medalPtsColors = ["var(--color-yellow)", "#c0c0c0", "#cd7f32"];
 
 export default function PilotosPage() {
+  const [page, setPage] = useState(1);
+  const PER_PAGE = 12;
+  const totalPages = Math.ceil(drivers.length / PER_PAGE);
+  const paginated = drivers.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
   return (
     <>
       <PageHeader
         eyebrow="Temporada 2026"
         title="Pilotos"
-        subtitle="34 pilotos · 4 splits · 2 fechas disputadas"
+        subtitle="66 pilotos · 4 splits · 2 fechas disputadas"
       />
 
       {/* TOP 3 */}
@@ -26,7 +33,7 @@ export default function PilotosPage() {
             <span className="section-eyebrow">Líderes</span>
             <h2 className="section-title">Top 3 General</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))", gap: "var(--space-md)", maxWidth: 860 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))", gap: "var(--space-md)", maxWidth: 860, margin: "0 auto" }}>
             {top3.map((d, i) => (
               <div
                 key={d.name}
@@ -67,7 +74,7 @@ export default function PilotosPage() {
             <h2 className="section-title">Grilla Completa</h2>
           </div>
           <div className="pilotos-grid">
-            {drivers.map((d) => (
+            {paginated.map((d) => (
               <div className="piloto-card" data-num={d.num} key={d.name}>
                 <div className="piloto-avatar" style={{ background: d.avatarGradient }}>
                   {d.initials}
@@ -78,6 +85,33 @@ export default function PilotosPage() {
                 <span className="piloto-split-tag">{d.split}</span>
               </div>
             ))}
+          </div>
+          <div className="pagination" style={{ marginTop: "var(--space-md)" }}>
+            <button
+              className="pagination-btn"
+              onClick={() => setPage(page - 1)}
+              disabled={page === 1}
+            >
+              ← Anterior
+            </button>
+            <div className="pagination-pages">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                <button
+                  key={p}
+                  className={`pagination-page${page === p ? " active" : ""}`}
+                  onClick={() => setPage(p)}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+            <button
+              className="pagination-btn"
+              onClick={() => setPage(page + 1)}
+              disabled={page === totalPages}
+            >
+              Siguiente →
+            </button>
           </div>
           <p style={{ marginTop: "var(--space-md)", fontSize: "var(--fs-label)", color: "var(--color-gray)", fontFamily: "var(--font-heading)", letterSpacing: "0.06em" }}>
             * Puntos acumulados en la Tabla General.

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import Countdown from "@/components/Countdown";
-import ScrollReveal from "@/components/ScrollReveal";
+
 import Footer from "@/components/Footer";
 import { calendarEntries } from "@/data/calendar";
 

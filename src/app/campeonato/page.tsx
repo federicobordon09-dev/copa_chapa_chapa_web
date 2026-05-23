@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
-import ScrollReveal from "@/components/ScrollReveal";
+
 import Footer from "@/components/Footer";
 
 const points = [

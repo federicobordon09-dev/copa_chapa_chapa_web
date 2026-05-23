@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Countdown from "@/components/Countdown";
-import ScrollReveal from "@/components/ScrollReveal";
+
 import Footer from "@/components/Footer";
 import { top5Preview } from "@/data/standings";
 
@@ -79,7 +79,7 @@ export default function HomePage() {
       </div>
 
       {/* STANDINGS PREVIEW */}
-      <section className="section section-dark reveal">
+      <section className="section section-dark">
         <div className="container">
           <div className="section-header">
             <span className="section-eyebrow">Temporada 2026</span>
