@@ -75,8 +75,9 @@ const rawDrivers = [
   { num: "62", initials: "NP", name: "Nicolas Picone", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#786fa6,#504080)" },
   { num: "63", initials: "RG", name: "Ramiro Grazzini", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#f3a683,#c07050)" },
   { num: "64", initials: "SM", name: "Samir Monier", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#b8e994,#70a060)" },
-  { num: "65", initials: "TF", name: "Thiago Falivene", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#d980fa,#a040c0)" },
+  { num: "65", initials: "AT", name: "Alan Truffe", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#d980fa,#a040c0)" },
   { num: "66", initials: "VC", name: "Valentin Corts", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#82ccdd,#5090a0)" },
+  { num: "67", initials: "JC", name: "Joaquin Campolieti", pts: 0, split: "Recién inscripto", avatarGradient: "linear-gradient(135deg,#00cec9,#009a96)" },
 ];
 
 export const drivers: Driver[] = rawDrivers.map((d) => ({

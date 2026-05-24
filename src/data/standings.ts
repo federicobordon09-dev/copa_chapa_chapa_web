@@ -74,8 +74,9 @@ export const standings: StandingsRow[] = [
   { pos: 62, name: "Nicolas Picone", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", total: 0 },
   { pos: 63, name: "Ramiro Grazzini", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", total: 0 },
   { pos: 64, name: "Samir Monier", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", total: 0 },
-  { pos: 65, name: "Thiago Falivene", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", total: 0 },
+  { pos: 65, name: "Alan Truffe", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", total: 0 },
   { pos: 66, name: "Valentin Corts", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", total: 0 },
+  { pos: 67, name: "Joaquin Campolieti", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", total: 0 },
 ];
 
 export interface SplitResult {

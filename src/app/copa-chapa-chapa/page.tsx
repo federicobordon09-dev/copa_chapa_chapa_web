@@ -84,7 +84,7 @@ export default function CopaChapaChapaPage() {
       <PageHeader
         eyebrow="Temporada 1"
         title="Copa Chapa Chapa"
-        subtitle="66 pilotos · 2 Fechas disputadas · 4 Splits completados"
+        subtitle="67 pilotos · 2 Fechas disputadas · 4 Splits completados"
       />
 
       {/* PODIO */}

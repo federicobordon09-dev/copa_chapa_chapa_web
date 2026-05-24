@@ -16,6 +16,8 @@ const driverTeamRaw: Record<string, string> = {
   "Agustin Moles": "Agustin Moles",
   "Joaquin Gutierrez": "Tres razones para abortar",
   "Fernando Ali": "Kattru's",
+  "Alan Truffe": "Kattru's",
+  "Joaquin Campolieti": "CamposRR",
   "Kevin Lhuillier": "KL",
   "Gonzalo Alonso": "overtake racing",
   "Matias Pacheco": "Seguro pero lento",
