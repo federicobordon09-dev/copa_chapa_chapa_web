@@ -3,12 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import NavDropdown from "./NavDropdown";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/campeonato", label: "Campeonato" },
-  { href: "/copa-chapa-chapa", label: "Copa Chapa Chapa" },
   { href: "/calendario", label: "Calendario" },
+];
+
+const dropdownItems = [
+  { label: "Copa Chapa Chapa", href: "/copa-chapa-chapa" },
+  { label: "Splits", href: "/splits" },
 ];
 
 export default function Navbar() {
@@ -42,6 +47,9 @@ export default function Navbar() {
     return () => document.removeEventListener("click", handler);
   }, [isOpen]);
 
+  const cccActive =
+    pathname === "/copa-chapa-chapa" || pathname === "/splits";
+
   return (
     <nav
       className="navbar"
@@ -67,6 +75,14 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          <NavDropdown
+            label="Copa Chapa Chapa"
+            href="/copa-chapa-chapa"
+            items={dropdownItems}
+            isActive={cccActive}
+            pathname={pathname}
+            onNavigate={close}
+          />
           <li>
             <span className="nav-cta nav-cta--closed">
               Inscripciones cerradas

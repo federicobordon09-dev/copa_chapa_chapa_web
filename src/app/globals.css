@@ -210,6 +210,133 @@ input, textarea, select {
 }
 
 /* ════════════════════════════════════════════
+   NAV DROPDOWN
+════════════════════════════════════════════ */
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-dropdown > a {
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav-dropdown > a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-yellow);
+  transition: width var(--transition-normal);
+}
+
+.nav-dropdown > a:hover,
+.nav-dropdown.open > a {
+  color: var(--color-white);
+}
+
+.nav-dropdown > a:hover::after,
+.nav-dropdown > a.active::after,
+.nav-dropdown.open > a::after {
+  width: 100%;
+}
+
+.nav-dropdown > a.active {
+  color: var(--color-yellow);
+}
+
+.nav-dropdown-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-gray);
+  transition: color var(--transition-fast), transform var(--transition-normal);
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+  flex-shrink: 0;
+}
+
+.nav-dropdown-chevron:hover {
+  color: var(--color-white);
+}
+
+.nav-dropdown-chevron.open {
+  transform: rotate(180deg);
+  color: var(--color-yellow);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--color-black);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal), visibility var(--transition-normal);
+  z-index: 110;
+  box-shadow: var(--shadow-heavy);
+  pointer-events: none;
+}
+
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown-menu li {
+  width: 100%;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1.2rem;
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.nav-dropdown-menu a::after {
+  display: none;
+}
+
+.nav-dropdown-menu a:hover {
+  color: var(--color-white);
+  background: rgba(255,255,255,0.04);
+}
+
+.nav-dropdown-menu a.active {
+  color: var(--color-yellow);
+  background: rgba(245,196,0,0.06);
+}
+
+/* ════════════════════════════════════════════
    HERO
 ════════════════════════════════════════════ */
 .hero {
@@ -1746,6 +1873,109 @@ input, textarea, select {
 }
 
 /* ════════════════════════════════════════════
+   SPLITS PAGE — Enhanced
+════════════════════════════════════════════ */
+.splits-page .split-card {
+  border-color: rgba(245, 196, 0, 0.12);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.25), 0 0 40px rgba(245, 196, 0, 0.04);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.splits-page .split-card:hover {
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.35), 0 0 60px rgba(245, 196, 0, 0.06);
+}
+
+.splits-page .split-header {
+  padding: 1rem 1.4rem;
+  position: relative;
+}
+
+.splits-page .split-card[data-split="top"] .split-header {
+  border-bottom-color: var(--color-yellow);
+}
+
+.splits-page .split-card[data-split="regular"] .split-header {
+  border-bottom-color: rgba(245, 196, 0, 0.2);
+}
+
+.splits-page .split-label {
+  font-size: 1.6rem;
+}
+
+.splits-page .split-circuit {
+  font-size: 0.65rem;
+  opacity: 0.55;
+}
+
+.splits-page .split-table th {
+  padding: 0.75rem 1.4rem;
+  font-size: 0.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  letter-spacing: 0.15em;
+}
+
+.splits-page .split-table td {
+  padding: 0.75rem 1.4rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+}
+
+.splits-page .split-table tbody tr {
+  transition: background var(--transition-fast);
+}
+
+.splits-page .split-table tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.splits-page .split-table tbody tr:hover td {
+  background: rgba(245, 196, 0, 0.08) !important;
+}
+
+.splits-page .sp-pos {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.2);
+  width: 32px;
+  font-weight: 400;
+}
+
+.splits-page .split-table td:last-child {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+}
+
+.splits-page .split-card[data-split="top"] .split-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--color-yellow);
+}
+
+.splits-page .split-card {
+  animation: splitFadeIn 0.45s ease both;
+}
+
+.splits-page .splits-grid > .split-card:last-child {
+  animation-delay: 0.15s;
+}
+
+@keyframes splitFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ════════════════════════════════════════════
    INSCRIPCIÓN
 ════════════════════════════════════════════ */
 .inscripcion {
@@ -2031,6 +2261,72 @@ input, textarea, select {
     display: block;
     border-radius: var(--radius-sm);
     padding: 0.75rem !important;
+  }
+
+  .nav-dropdown {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-dropdown > a {
+    display: block;
+    width: 100%;
+    padding: 0.9rem var(--space-md);
+    font-size: 0.9rem;
+  }
+
+  .nav-dropdown > a::after {
+    display: none;
+  }
+
+  .nav-dropdown > a.active {
+    color: var(--color-yellow);
+  }
+
+  .nav-dropdown-chevron {
+    position: absolute;
+    right: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-dropdown-chevron.open {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    display: none;
+    pointer-events: auto;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 0.7rem var(--space-md) 0.7rem calc(var(--space-md) + 1rem);
+    font-size: 0.85rem;
+  }
+
+  .nav-dropdown-menu a:hover {
+    background: rgba(255,255,255,0.03);
+  }
+
+  .nav-dropdown-menu a.active {
+    background: rgba(245,196,0,0.06);
   }
 
   .nav-toggle {
@@ -2394,6 +2690,28 @@ input, textarea, select {
 
   .split-card {
     border-radius: var(--radius-sm);
+  }
+
+  .splits-page .split-label {
+    font-size: 1.25rem;
+  }
+
+  .splits-page .split-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .splits-page .split-table th {
+    padding: 0.6rem 1rem;
+  }
+
+  .splits-page .split-table td {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .splits-page .sp-pos {
+    font-size: 0.75rem;
+    width: 26px;
   }
 
   .sp-pos {
