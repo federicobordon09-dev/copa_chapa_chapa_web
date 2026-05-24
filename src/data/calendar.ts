@@ -27,7 +27,7 @@ export const calendarEntries: CalendarEntry[] = [
     name: "Buenos Aires",
     circuit: "Autódromo Oscar y Juan Gálvez",
     location: "Argentina",
-    splits: ["Split 1 · 1° Alejandro Rodriguez", "Split 2 · 1° Bruno Koller"],
+    splits: ["Split 1 · 1° Bruno Koller", "Split 2 · 1° Alejandro Rodriguez"],
     statusLabel: "Finalizada",
   },
   {
