@@ -1717,6 +1717,27 @@ input, textarea, select {
   white-space: nowrap;
 }
 
+.col-var {
+  text-align: center;
+  width: 60px;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  white-space: nowrap;
+}
+
+.var-up {
+  color: #22c55e;
+}
+
+.var-down {
+  color: #ef4444;
+}
+
+.var-eq {
+  color: var(--color-gray);
+}
+
 .table-note {
   margin-top: var(--space-sm);
   font-size: var(--fs-label);

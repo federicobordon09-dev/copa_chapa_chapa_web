@@ -12,12 +12,15 @@ export const metadata: Metadata = {
 };
 
 export default function CalendarioPage() {
+  const doneCount = calendarEntries.filter((e) => e.status === "done").length;
+  const remainingCount = calendarEntries.filter((e) => e.status !== "done").length;
+
   return (
     <>
       <PageHeader
         eyebrow="Temporada 1"
         title="Calendario"
-        subtitle="4 Fechas · 2 Disputadas · 2 Por correr"
+        subtitle={`4 Fechas · ${doneCount} Disputadas · ${remainingCount} Por correr`}
       />
 
       {/* PRÓXIMA CARRERA */}
@@ -26,8 +29,8 @@ export default function CalendarioPage() {
           <div className="next-race-inner">
             <div className="next-race-details">
               <div className="next-race-label">⚑ Próxima carrera</div>
-              <div className="next-race-name">Fecha 3 — Toay La Pampa</div>
-              <div className="next-race-info">Lunes 25 de Mayo · 21:30 HS</div>
+              <div className="next-race-name">Fecha 4 — La Plata</div>
+              <div className="next-race-info">Lunes 1 de Junio · 21:30 HS</div>
             </div>
             <Countdown />
           </div>

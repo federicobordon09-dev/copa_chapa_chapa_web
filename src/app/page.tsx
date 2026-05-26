@@ -72,9 +72,9 @@ export default function HomePage() {
           <div className="next-race-inner">
             <div className="next-race-details">
               <div className="next-race-label">⚑ Próxima carrera</div>
-              <div className="next-race-name">Fecha 3 — Toay La Pampa</div>
+              <div className="next-race-name">Fecha 4 — La Plata</div>
               <div className="next-race-info">
-                Lunes 25 de Mayo · 21:30 HS
+                Lunes 1 de Junio · 21:30 HS
               </div>
             </div>
             <Countdown />

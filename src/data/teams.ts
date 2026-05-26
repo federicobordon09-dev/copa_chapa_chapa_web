@@ -8,85 +8,93 @@ export interface TeamStanding {
 }
 
 const driverTeamRaw: Record<string, string> = {
-  "Bruno Koller": "Sport Team",
-  "Marcos Turri": "MJ Racing",
-  "Matteo Viñas": "Viñas Competicion",
-  "Agustin Carreras": "Bull competicion",
-  "Julian Varlas": "Overtake Racing",
-  "Agustin Moles": "Agustin Moles",
-  "Joaquin Gutierrez": "Tres razones para abortar",
-  "Fernando Ali": "Kattru's",
-  "Alan Truffe": "Kattru's",
-  "Joaquin Campolieti": "CamposRR",
-  "Kevin Lhuillier": "KL",
-  "Gonzalo Alonso": "overtake racing",
-  "Matias Pacheco": "Seguro pero lento",
-  "Lucio Focaccia": "TK",
-  "Agustin Rojas": "La Mafilia",
-  "Juan Jose Sanchez": "Jäger Team",
+  "Santino Casciano": "ANTIKUKAS Racing",
   "Matias Cayrus Riffel": "enano maldito team",
-  "Franco Guerreros": "guerreros racing",
-  "Nico Valero": "ADTC team",
-  "Lucas Nin": "PRO CARS#1",
-  "Agustin Savone": "SVN",
-  "Eric Priemer": "Pañalera",
-  "Santiago Ortiz Ocampo": "Panchos Racing",
-  "Luka Sanchez": "Luka Sanchez TK",
-  "Nacho Davin": "Tío Nacho Manzanilla",
-  "Bernardo Morico": "Motorock Racing",
+  "Bruno Koller": "Sport team",
+  "Jonathan Molleker": "Joni Fps",
+  "Alan Truffe": "Kattrus",
+  "Ramiro Grazzini": "Grazzini racing",
+  "Gonzalo Bariffuzza": "BFZ Racing",
+  "Maximiliano Dieringer": "SIET",
+  "Fede Landa": "Petaca Racing Team",
+  "Brian Campos": "Sociedad de Fomento Vikingos",
+  "Agustin Carreras": "Bull competicion",
+  "Facundo Toledo": "toledo racing",
+  "Juan Ignacio Kuchen": "JK Competicion",
+  "Martin Diaz": "APL",
+  "Luca Díaz": "PREMA E-Sports",
+  "Valentin Corts": "MENDUCO",
   "Julian Valiñas": "MJ Racing",
+  "Alejandro Guerrero": "WarriorTeam",
+  "Samir Monier": "PREMA eSports",
+  "Agustin Rojas": "La Mafilia",
+  "Bernardo Morico": "Motorock Racing",
+  "Gustavo Corrales": "Villaguay competiciones",
+  "Matteo Viñas": "Viñas Competicion",
+  "Franco Guerreros": "guerreros racing",
+  "Matias Dowojak": "Coso tim",
+  "Lucas Nin": "PRO CARS#1",
+  "Marcos Turri": "MJ Racing",
+  "Lucio Focaccia": "TK",
+  "Nacho Davin": "Tío Nacho Manzanilla",
+  "Luciano Bogado": "Overtake Racing",
+  "Fabian Gamero": "FG Motorsport",
+  "Alejandro Jara": "aleJara",
+  "Agustin Savone": "SVN",
+  "Fernando Ali": "Kattru's",
+  "Eric Priemer": "Pañalera",
+  "Luciano Bravo": "GSW3",
+  "Mariano Sale": "Goticas Qlonas Racing Team",
+  "Ignacio Aprikian": "No Doblo",
+  "Franco Perez": "Berna Racing Team",
+  "Nicolas Davin": "kotorra",
+  "Julian Agustin Reynoso Zuñiga": "Sparking Team",
+  "Lucas Berti": "show",
+  "Nicolas Marsilio": "NM Racing",
+  "Manuel Camarero": "pipón team",
+  "Nicolas Picone": "Cokimbo Racing",
+  "Marcos Donner": "Turdera Racing",
+  "Santiago Ortiz Ocampo": "Panchos Racing",
+  "Joaquin Campolieti": "CamposRR",
+  "Matias Pacheco": "Seguro pero lento",
   "Uriel Manzanelli": "sparking team",
   "Agustin Chijanoski": "Prema Esports",
-  "Lucas Morel": "CM Racing",
-  "Brian Campos": "Sociedad de Fomento Vikingos",
-  "Maximiliano Dieringer": "SIET",
-  "Luciano Bravo": "GSW3",
-  "Fede Landa": "Petaca Racing Team",
-  "Nicolas Picone": "Cokimbo Racing",
-  "Gustavo Corrales": "Villaguay competiciones",
-  "Gonzalo Bariffuzza": "BFZ Racing",
-  "Marcos Donner": "Turdera Racing",
-  "Jonathan Molleker": "Joni Fps",
-  "Luca Díaz": "PREMA E-Sports",
-  "Nicolas Marsilio": "NM Racing",
-  "Valentin Corts": "MENDUCO",
-  "Ignacio Aprikian": "No Doblo",
+  "Luka Sanchez": "Luka Sanchez TK",
   "Daniel Castro": "Lento Pero Seguro",
-  "Samir Monier": "PREMA eSports",
-  "Nicolas Davin": "kotorra",
-  "Mariano Sale": "Goticas Qlonas Racing Team",
+  "Nico Valero": "ADTC team",
+  "Juan Jose Sanchez": "Jäger Team",
+  "Julian Varlas": "Overtake Racing",
+  "Gonzalo Alonso": "overtake racing",
+  "Lucas Morel": "CM Racing",
+  "Kevin Lhuillier": "KL",
   "Mateo Magri": "LaTripleta",
+  "Patricio Aguerreche": "",
   "Francisco Piccinini": "Franchuke22",
-  "Martin Diaz": "APL",
   "Marcelo Haase": "Haase motorsport",
-  "Manuel Camarero": "pipón team",
-  "Alejandro Jara": "aleJara",
-  "Lucas Berti": "show",
-  "Ramiro Grazzini": "Grazzini racing",
-  "Matias Dowojak": "Coso tim",
-  "Juan Ignacio Kuchen": "JK Competicion",
-  "Julian Agustin Reynoso Zuñiga": "Sparking Team",
-  "Luciano Bogado": "Overtake Racing",
-  "Facundo Toledo": "toledo racing",
-  "Alejandro Guerrero": "WarriorTeam",
+  "Agustin Moles": "Agustin Moles",
+  "Damian Ludueña": "APL",
+  "Joaquin Gutierrez": "Tres razones para abortar",
 };
 
-const teamNormalization: Record<string, string> = {
-  "overtake racing": "Overtake Racing",
+const teamDisplay: Record<string, string> = {
+  "sport team": "Sport Team",
   "prema e-sports": "Prema Esports",
   "prema esports": "Prema Esports",
+  "prema eSports": "Prema Esports",
   "sparking team": "Sparking Team",
+  "overtake racing": "Overtake Racing",
+  "kattrus": "Kattru's",
 };
 
 function normalizeTeam(name: string): string {
-  const lower = name.toLowerCase();
-  if (teamNormalization[lower]) return teamNormalization[lower];
-  return name;
+  const lower = name.trim().toLowerCase();
+  if (teamDisplay[lower]) return teamDisplay[lower];
+  return name.trim();
 }
 
 function findTeam(driverName: string): string {
   const raw = driverTeamRaw[driverName];
-  if (raw) return normalizeTeam(raw);
+  if (raw && raw.length > 0) return normalizeTeam(raw);
   return "Sin equipo";
 }
 
@@ -112,6 +120,6 @@ export function computeTeamStandings(): TeamStanding[] {
       total,
       driverCount: teamDrivers[name],
     }))
-    .sort((a, b) => b.total - a.total)
+    .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name))
     .map((entry, i) => ({ ...entry, pos: i + 1 }));
 }

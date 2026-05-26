@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const RACE_DATE = new Date("2026-05-25T21:30:00-03:00");
+const RACE_DATE = new Date("2026-06-01T21:30:00-03:00");
 
 export default function Countdown() {
   const [display, setDisplay] = useState<string[]>(["--", "--", "--", "--"]);

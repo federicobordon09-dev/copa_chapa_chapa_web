@@ -45,6 +45,7 @@ export const splits: SplitGroup[] = [
       "Agustin Moles",
       "Agustin Rojas",
       "Alejandro Guerrero",
+      "Alejandro Rodriguez",
       "Alejandro Jara",
       "Brian Campos",
       "Damian Ludueña",

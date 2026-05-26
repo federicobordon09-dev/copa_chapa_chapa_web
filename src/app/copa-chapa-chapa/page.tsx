@@ -5,8 +5,7 @@ import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
 import Pagination from "@/components/Pagination";
-import { standings, races } from "@/data/standings";
-import { drivers } from "@/data/drivers";
+import { standings, races, circuitName, getPositionChanges } from "@/data/standings";
 import { computeTeamStandings, type TeamStanding } from "@/data/teams";
 
 function posClass(pos: number) {
@@ -31,13 +30,11 @@ function matchesSearch(name: string, search: string): boolean {
 }
 
 const PER_PAGE_TABLE = 10;
-const PER_PAGE_DRIVERS = 12;
 const PER_PAGE_TEAMS = 10;
 
 export default function CopaChapaChapaPage() {
   const [search, setSearch] = useState("");
   const [tablePage, setTablePage] = useState(1);
-  const [driverPage, setDriverPage] = useState(1);
   const [teamPage, setTeamPage] = useState(1);
   const [activeTab, setActiveTab] = useState(races[0].id);
 
@@ -48,16 +45,12 @@ export default function CopaChapaChapaPage() {
   const handleSearch = (val: string) => {
     setSearch(val);
     setTablePage(1);
-    setDriverPage(1);
   };
 
   const searchLower = search.toLowerCase();
 
   const filteredStandings = standings.filter((row) =>
     matchesSearch(row.name, searchLower)
-  );
-  const filteredDrivers = drivers.filter((d) =>
-    matchesSearch(d.name, searchLower)
   );
 
   const tableTotalPages = Math.ceil(filteredStandings.length / PER_PAGE_TABLE) || 1;
@@ -66,11 +59,7 @@ export default function CopaChapaChapaPage() {
     tablePage * PER_PAGE_TABLE
   );
 
-  const driverTotalPages = Math.ceil(filteredDrivers.length / PER_PAGE_DRIVERS) || 1;
-  const paginatedDrivers = filteredDrivers.slice(
-    (driverPage - 1) * PER_PAGE_DRIVERS,
-    driverPage * PER_PAGE_DRIVERS
-  );
+  const posChanges = getPositionChanges(standings);
 
   const teamStandingsAll: TeamStanding[] = computeTeamStandings();
   const teamTotalPages = Math.ceil(teamStandingsAll.length / PER_PAGE_TEAMS) || 1;
@@ -84,7 +73,7 @@ export default function CopaChapaChapaPage() {
       <PageHeader
         eyebrow="Temporada 1"
         title="Copa Chapa Chapa"
-        subtitle="67 pilotos · 2 Fechas disputadas · 4 Splits completados"
+        subtitle="67 pilotos · 3 Fechas disputadas · 6 Splits completados"
       />
 
       {/* PODIO */}
@@ -93,21 +82,21 @@ export default function CopaChapaChapaPage() {
           <div className="podio">
             <div className="podio-card podio-2">
               <div className="podio-pos">2</div>
-              <div className="podio-name">Franco Perez</div>
-              <div className="podio-pts">36 <span>pts</span></div>
+              <div className="podio-name">Brian Campos</div>
+              <div className="podio-pts">47 <span>pts</span></div>
               <div className="podio-block podio-block-2" />
             </div>
             <div className="podio-card podio-1">
               <div className="podio-crown">👑</div>
               <div className="podio-pos">1</div>
-              <div className="podio-name">Damian Ludueña</div>
-              <div className="podio-pts">44 <span>pts</span></div>
+              <div className="podio-name">Santino Casciano</div>
+              <div className="podio-pts">60 <span>pts</span></div>
               <div className="podio-block podio-block-1" />
             </div>
             <div className="podio-card podio-3">
               <div className="podio-pos">3</div>
-              <div className="podio-name">Santino Casciano</div>
-              <div className="podio-pts">35 <span>pts</span></div>
+              <div className="podio-name">Franco Perez</div>
+              <div className="podio-pts">45 <span>pts</span></div>
               <div className="podio-block podio-block-3" />
             </div>
           </div>
@@ -130,34 +119,51 @@ export default function CopaChapaChapaPage() {
                 <tr>
                   <th className="col-pos">#</th>
                   <th className="col-driver">Piloto</th>
-                  <th className="col-split">Split 1<br /><span>Comodoro</span></th>
-                  <th className="col-split">Split 2<br /><span>Comodoro</span></th>
-                  <th className="col-split">Split 1<br /><span>Bs. Aires</span></th>
-                  <th className="col-split">Split 2<br /><span>Bs. Aires</span></th>
+                  <th className="col-split">S1<br /><span>Comodoro</span></th>
+                  <th className="col-split">S2<br /><span>Comodoro</span></th>
+                  <th className="col-split">S1<br /><span>Bs. Aires</span></th>
+                  <th className="col-split">S2<br /><span>Bs. Aires</span></th>
+                  <th className="col-split">S1<br /><span>La Pampa</span></th>
+                  <th className="col-split">S2<br /><span>La Pampa</span></th>
                   <th className="col-total">Total</th>
+                  <th className="col-var">Var</th>
                 </tr>
               </thead>
               <tbody>
-                {paginatedStandings.map((row) => (
-                  <tr key={row.pos} className={row.pos <= 3 ? "row-top3" : ""}>
-                    <td className={`col-pos ${posClass(row.pos)}`}>
-                      {String(row.pos).padStart(2, "0")}
-                    </td>
-                    <td className="col-driver">
-                      <span className="driver-name">
-                        {row.name}
-                        {row.status && (
-                          <span className="driver-status"> ({row.status})</span>
+                {paginatedStandings.map((row) => {
+                  const change = posChanges.get(row.name);
+                  return (
+                    <tr key={row.pos} className={row.pos <= 3 ? "row-top3" : ""}>
+                      <td className={`col-pos ${posClass(row.pos)}`}>
+                        {String(row.pos).padStart(2, "0")}
+                      </td>
+                      <td className="col-driver">
+                        <span className="driver-name">
+                          {row.name}
+                          {row.status && (
+                            <span className="driver-status"> ({row.status})</span>
+                          )}
+                        </span>
+                      </td>
+                      <td className="col-split">{row.f1s1}</td>
+                      <td className="col-split">{row.f1s2}</td>
+                      <td className="col-split">{row.f2s1}</td>
+                      <td className="col-split">{row.f2s2}</td>
+                      <td className="col-split">{row.f3s1}</td>
+                      <td className="col-split">{row.f3s2}</td>
+                      <td className="col-total">{row.total}</td>
+                      <td className="col-var">
+                        {change && change.delta > 0 ? (
+                          <span className="var-up">↑{change.delta}</span>
+                        ) : change && change.delta < 0 ? (
+                          <span className="var-down">↓{Math.abs(change.delta)}</span>
+                        ) : (
+                          <span className="var-eq">—</span>
                         )}
-                      </span>
-                    </td>
-                    <td className="col-split">{row.f1s1}</td>
-                    <td className="col-split">{row.f1s2}</td>
-                    <td className="col-split">{row.f2s1}</td>
-                    <td className="col-split">{row.f2s2}</td>
-                    <td className="col-total">{row.total}</td>
-                  </tr>
-                ))}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -202,7 +208,7 @@ export default function CopaChapaChapaPage() {
                     <div className="split-header">
                       <span className="split-label">{split.label}</span>
                       <span className="split-circuit">
-                        {r.id === "como" ? "Comodoro" : "Buenos Aires"}
+                        {circuitName(r.id)}
                       </span>
                     </div>
                     <table className="split-table">
@@ -278,38 +284,6 @@ export default function CopaChapaChapaPage() {
             totalPages={teamTotalPages}
             onPageChange={setTeamPage}
           />
-        </div>
-      </section>
-
-      {/* GRILLA COMPLETA DE PILOTOS */}
-      <section className="section-compact section-dark">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-eyebrow">Todos los pilotos</span>
-            <h2 className="section-title">Grilla Completa</h2>
-          </div>
-          <div className="pilotos-grid">
-            {paginatedDrivers.map((d) => (
-              <div className="piloto-card" data-num={d.num} key={d.name}>
-                <div className="piloto-avatar" style={{ background: d.avatarGradient }}>
-                  {d.initials}
-                </div>
-                <div className="piloto-name">{d.name}</div>
-                <div className="piloto-team-tag">{d.team}</div>
-                <div className="piloto-pts">{d.pts}</div>
-                <div className="piloto-pts-label">puntos</div>
-                <span className="piloto-split-tag">{d.split}</span>
-              </div>
-            ))}
-          </div>
-          <Pagination
-            page={driverPage}
-            totalPages={driverTotalPages}
-            onPageChange={setDriverPage}
-          />
-          <p className="table-note" style={{ marginTop: "var(--space-md)" }}>
-            * Puntos acumulados en la Tabla General.
-          </p>
         </div>
       </section>
 
