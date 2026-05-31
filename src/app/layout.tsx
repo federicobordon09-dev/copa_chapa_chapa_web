@@ -57,6 +57,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "eeKY2FPAJTtT2ojEPqhX61phsFlxYKvgaQqV2MORKz0",
+  },
   icons: {
     icon: "/assets/images/isotipo_cc.webp",
     apple: "/assets/images/isotipo_cc.webp",
