@@ -102,6 +102,12 @@ const existingMetadata = new Map(
     { num: "65", initials: "AT", name: "Alan Truffe", avatarGradient: "linear-gradient(135deg,#d980fa,#a040c0)" },
     { num: "66", initials: "VC", name: "Valentin Corts", avatarGradient: "linear-gradient(135deg,#82ccdd,#5090a0)" },
     { num: "67", initials: "JC", name: "Joaquin Campolieti", avatarGradient: "linear-gradient(135deg,#00cec9,#009a96)" },
+    { num: "68", initials: "AG", name: "Alvaro Guzman", avatarGradient: "linear-gradient(135deg,#fd79a8,#c04070)" },
+    { num: "69", initials: "GS", name: "Gaspar Stanoss", avatarGradient: "linear-gradient(135deg,#6c5ce7,#4030a0)" },
+    { num: "70", initials: "MF", name: "Maxi Fayon", avatarGradient: "linear-gradient(135deg,#00b894,#007050)" },
+    { num: "71", initials: "MR", name: "Matias Ramirez", avatarGradient: "linear-gradient(135deg,#e84393,#a02060)" },
+    { num: "72", initials: "BB", name: "Brian Bonato", avatarGradient: "linear-gradient(135deg,#00cec9,#008080)" },
+    { num: "73", initials: "FC", name: "Francisco Czerniawski", avatarGradient: "linear-gradient(135deg,#6c5ce7,#4030a0)" },
   ].map((d) => [d.name, d] as const)
 );
 

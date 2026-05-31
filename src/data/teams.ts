@@ -74,6 +74,12 @@ const driverTeamRaw: Record<string, string> = {
   "Agustin Moles": "Agustin Moles",
   "Damian Ludueña": "APL",
   "Joaquin Gutierrez": "Tres razones para abortar",
+  "Alvaro Guzman": "",
+  "Gaspar Stanoss": "",
+  "Maxi Fayon": "",
+  "Matias Ramirez": "",
+  "Brian Bonato": "",
+  "Francisco Czerniawski": "",
 };
 
 const teamDisplay: Record<string, string> = {

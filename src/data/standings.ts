@@ -138,6 +138,12 @@ export const standings: StandingsRow[] = computeStandings([
   { pos: 65, name: "Nicolas Picone", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
   { pos: 66, name: "Samir Monier", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
   { pos: 67, name: "Joaquin Campolieti", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
+  { pos: 68, name: "Alvaro Guzman", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
+  { pos: 69, name: "Gaspar Stanoss", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
+  { pos: 70, name: "Maxi Fayon", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
+  { pos: 71, name: "Matias Ramirez", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
+  { pos: 72, name: "Brian Bonato", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
+  { pos: 73, name: "Francisco Czerniawski", f1s1: "—", f1s2: "—", f2s1: "—", f2s2: "—", f3s1: "—", f3s2: "—", total: 0 },
 ]);
 
 export interface SplitResult {
