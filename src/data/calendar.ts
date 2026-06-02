@@ -43,7 +43,7 @@ export const calendarEntries: CalendarEntry[] = [
   {
     num: "04",
     status: "next",
-    fechaLabel: "⚑ Próxima · Lunes 1 de Junio · 21:30 hs",
+    fechaLabel: "⚑ Próxima · Lunes 8 de Junio · 21:30 hs",
     name: "La Plata",
     circuit: "Autódromo Roberto Mouras",
     location: "Buenos Aires",
