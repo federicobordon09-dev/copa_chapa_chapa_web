@@ -73,7 +73,7 @@ export default function CopaChapaChapaPage() {
       <PageHeader
         eyebrow="Temporada 1"
         title="Copa Chapa Chapa"
-        subtitle="67 pilotos · 3 Fechas disputadas · 6 Splits completados"
+        subtitle="74 pilotos · 4 Fechas disputadas · 2 Splits"
       />
 
       {/* PODIO */}
@@ -82,21 +82,21 @@ export default function CopaChapaChapaPage() {
           <div className="podio">
             <div className="podio-card podio-2">
               <div className="podio-pos">2</div>
-              <div className="podio-name">Brian Campos</div>
-              <div className="podio-pts">47 <span>pts</span></div>
+              <div className="podio-name">Joaquin Gutierrez</div>
+              <div className="podio-pts">61 <span>pts</span></div>
               <div className="podio-block podio-block-2" />
             </div>
             <div className="podio-card podio-1">
               <div className="podio-crown">👑</div>
               <div className="podio-pos">1</div>
-              <div className="podio-name">Santino Casciano</div>
-              <div className="podio-pts">60 <span>pts</span></div>
+              <div className="podio-name">Franco Perez</div>
+              <div className="podio-pts">64 <span>pts</span></div>
               <div className="podio-block podio-block-1" />
             </div>
             <div className="podio-card podio-3">
               <div className="podio-pos">3</div>
-              <div className="podio-name">Franco Perez</div>
-              <div className="podio-pts">45 <span>pts</span></div>
+              <div className="podio-name">Santino Casciano</div>
+              <div className="podio-pts">60 <span>pts</span></div>
               <div className="podio-block podio-block-3" />
             </div>
           </div>
@@ -125,6 +125,8 @@ export default function CopaChapaChapaPage() {
                   <th className="col-split">S2<br /><span>Bs. Aires</span></th>
                   <th className="col-split">S1<br /><span>La Pampa</span></th>
                   <th className="col-split">S2<br /><span>La Pampa</span></th>
+                  <th className="col-split">S1<br /><span>La Plata</span></th>
+                  <th className="col-split">S2<br /><span>La Plata</span></th>
                   <th className="col-total">Total</th>
                   <th className="col-var">Var</th>
                 </tr>
@@ -151,6 +153,8 @@ export default function CopaChapaChapaPage() {
                       <td className="col-split">{row.f2s2}</td>
                       <td className="col-split">{row.f3s1}</td>
                       <td className="col-split">{row.f3s2}</td>
+                      <td className="col-split">{row.f4s1}</td>
+                      <td className="col-split">{row.f4s2}</td>
                       <td className="col-total">{row.total}</td>
                       <td className="col-var">
                         {change && change.delta > 0 ? (
@@ -272,7 +276,19 @@ export default function CopaChapaChapaPage() {
                     <td className="col-driver">
                       <span className="driver-name">{team.name}</span>
                     </td>
-                    <td className="col-split">{team.driverCount}</td>
+                    <td className="col-split">
+                      <span className="team-drivers-wrap">
+                        <span className="team-drivers-count">{team.driverCount}</span>
+                        <span className="team-drivers-tip">
+                          <span className="team-drivers-tip-title">Pilotos</span>
+                          <ul className="team-drivers-tip-list">
+                            {team.drivers.map((d) => (
+                              <li key={d}>{d}</li>
+                            ))}
+                          </ul>
+                        </span>
+                      </span>
+                    </td>
                     <td className="col-total">{team.total}</td>
                   </tr>
                 ))}

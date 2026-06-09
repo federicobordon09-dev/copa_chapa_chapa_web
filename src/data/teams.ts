@@ -5,6 +5,7 @@ export interface TeamStanding {
   name: string;
   total: number;
   driverCount: number;
+  drivers: string[];
 }
 
 const driverTeamRaw: Record<string, string> = {
@@ -76,10 +77,11 @@ const driverTeamRaw: Record<string, string> = {
   "Joaquin Gutierrez": "Tres razones para abortar",
   "Alvaro Guzman": "",
   "Gaspar Stanoss": "",
-  "Maxi Fayon": "",
+  "Maxi Fayon": "Fayon Motorsport",
   "Matias Ramirez": "",
   "Brian Bonato": "",
   "Francisco Czerniawski": "",
+  "Lucas Zanelli": "",
 };
 
 const teamDisplay: Record<string, string> = {
@@ -111,6 +113,7 @@ export function getTeam(driverName: string): string {
 export function computeTeamStandings(): TeamStanding[] {
   const teamPoints: Record<string, number> = {};
   const teamDrivers: Record<string, number> = {};
+  const teamDriverList: Record<string, string[]> = {};
 
   for (const row of rawStandings) {
     const team = findTeam(row.name);
@@ -118,6 +121,8 @@ export function computeTeamStandings(): TeamStanding[] {
     if (norm === "Sin equipo") continue;
     teamPoints[norm] = (teamPoints[norm] || 0) + row.total;
     teamDrivers[norm] = (teamDrivers[norm] || 0) + 1;
+    if (!teamDriverList[norm]) teamDriverList[norm] = [];
+    teamDriverList[norm].push(row.name);
   }
 
   return Object.entries(teamPoints)
@@ -125,6 +130,7 @@ export function computeTeamStandings(): TeamStanding[] {
       name,
       total,
       driverCount: teamDrivers[name],
+      drivers: teamDriverList[name] ?? [],
     }))
     .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name))
     .map((entry, i) => ({ ...entry, pos: i + 1 }));

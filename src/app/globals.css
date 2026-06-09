@@ -3021,3 +3021,98 @@ input, textarea, select {
   background: var(--color-yellow);
   border-color: var(--color-yellow);
 }
+
+/* ════════════════════════════════════════════
+   TOOLTIP — Pilotos por equipo
+════════════════════════════════════════════ */
+.team-drivers-wrap {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-drivers-wrap .team-drivers-count {
+  position: relative;
+  z-index: 1;
+}
+
+.team-drivers-wrap .team-drivers-tip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--color-dark-mid);
+  border: 1px solid var(--color-yellow);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1rem;
+  min-width: 180px;
+  max-width: 260px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), transform var(--transition-normal), visibility var(--transition-normal);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.team-drivers-wrap .team-drivers-tip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-yellow);
+}
+
+.team-drivers-wrap .team-drivers-tip::before {
+  content: '';
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--color-dark-mid);
+  z-index: 1;
+}
+
+.team-drivers-wrap:hover .team-drivers-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.team-drivers-tip-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.team-drivers-tip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-drivers-tip-list li {
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0;
+  line-height: 1.3;
+}
+
+.team-drivers-tip-list li + li {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}

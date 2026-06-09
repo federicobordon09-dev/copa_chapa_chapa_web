@@ -42,12 +42,12 @@ export const calendarEntries: CalendarEntry[] = [
   },
   {
     num: "04",
-    status: "next",
-    fechaLabel: "⚑ Próxima · Lunes 8 de Junio · 21:30 hs",
+    status: "done",
+    fechaLabel: "Fecha 4 · Completada",
     name: "La Plata",
     circuit: "Autódromo Roberto Mouras",
     location: "Buenos Aires",
-    splits: ["Split 1 · Por definir", "Split 2 · Por definir"],
-    statusLabel: "Próxima",
+    splits: ["Split 1 · 1° Alvaro Guzman", "Split 2 · 1° Franco Guerreros"],
+    statusLabel: "Finalizada",
   },
 ];

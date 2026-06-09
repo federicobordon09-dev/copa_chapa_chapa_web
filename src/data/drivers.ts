@@ -16,6 +16,8 @@ function p(v: string): number {
 }
 
 function lastSplit(row: typeof standings[number]): string {
+  if (p(row.f4s1) > 0) return "Split 1 La Plata";
+  if (p(row.f4s2) > 0) return "Split 2 La Plata";
   if (p(row.f3s1) > 0) return "Split 1 La Pampa";
   if (p(row.f3s2) > 0) return "Split 2 La Pampa";
   if (p(row.f2s1) > 0) return "Split 1 Bs. Aires";
@@ -108,6 +110,7 @@ const existingMetadata = new Map(
     { num: "71", initials: "MR", name: "Matias Ramirez", avatarGradient: "linear-gradient(135deg,#e84393,#a02060)" },
     { num: "72", initials: "BB", name: "Brian Bonato", avatarGradient: "linear-gradient(135deg,#00cec9,#008080)" },
     { num: "73", initials: "FC", name: "Francisco Czerniawski", avatarGradient: "linear-gradient(135deg,#6c5ce7,#4030a0)" },
+    { num: "74", initials: "LZ", name: "Lucas Zanelli", avatarGradient: "linear-gradient(135deg,#00b894,#00a080)" },
   ].map((d) => [d.name, d] as const)
 );
 

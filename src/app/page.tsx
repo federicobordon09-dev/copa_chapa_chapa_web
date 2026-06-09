@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Countdown from "@/components/Countdown";
-
 import Footer from "@/components/Footer";
 import { top5Preview } from "@/data/standings";
 
@@ -66,20 +64,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* NEXT RACE + COUNTDOWN */}
+      {/* TEMPORADA FINALIZADA */}
       <div className="next-race">
         <div className="container">
           <div className="next-race-inner">
             <div className="next-race-details">
-              <div className="next-race-label">⚑ Próxima carrera</div>
-              <div className="next-race-name">Fecha 4 — La Plata</div>
+              <div className="next-race-label">🏁 Temporada finalizada</div>
+              <div className="next-race-name">Campeón: Franco Perez</div>
               <div className="next-race-info">
-                Lunes 8 de Junio · 21:30 HS
+                64 pts · 4 fechas · 2 splits
               </div>
             </div>
-            <Countdown />
-            <Link href="/calendario" className="btn btn-primary">
-              Ver calendario
+            <div className="hero-stat" style={{ textAlign: "center" }}>
+              <span className="hero-stat-number" style={{ fontSize: "2.5rem" }}>🏆</span>
+              <span className="hero-stat-label" style={{ color: "rgba(255,255,255,0.6)" }}>Copa Chapa Chapa · Temp. 1</span>
+            </div>
+            <Link href="/copa-chapa-chapa" className="btn btn-primary">
+              Ver clasificación final →
             </Link>
           </div>
         </div>

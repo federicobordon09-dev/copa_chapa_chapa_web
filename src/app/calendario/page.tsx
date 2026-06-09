@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
-import Countdown from "@/components/Countdown";
 
 import Footer from "@/components/Footer";
 import { calendarEntries } from "@/data/calendar";
@@ -23,16 +22,19 @@ export default function CalendarioPage() {
         subtitle={`4 Fechas · ${doneCount} Disputadas · ${remainingCount} Por correr`}
       />
 
-      {/* PRÓXIMA CARRERA */}
+      {/* ÚLTIMA CARRERA */}
       <div className="next-race">
         <div className="container">
           <div className="next-race-inner">
             <div className="next-race-details">
-              <div className="next-race-label">⚑ Próxima carrera</div>
-              <div className="next-race-name">Fecha 4 — La Plata</div>
-              <div className="next-race-info">Lunes 8 de Junio · 21:30 HS</div>
+              <div className="next-race-label">🏁 Temporada finalizada</div>
+              <div className="next-race-name">Campeón: Franco Perez</div>
+              <div className="next-race-info">64 pts · 4 fechas disputadas</div>
             </div>
-            <Countdown />
+            <div className="hero-stat" style={{ textAlign: "center" }}>
+              <span className="hero-stat-number" style={{ fontSize: "2.5rem" }}>🏆</span>
+              <span className="hero-stat-label" style={{ color: "rgba(255,255,255,0.6)" }}>Copa Chapa Chapa · Temp. 1</span>
+            </div>
           </div>
         </div>
       </div>
