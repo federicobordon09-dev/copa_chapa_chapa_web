@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 const GOOGLE_SHEET_ID = process.env.GOOGLE_SHEET_ID;
 const GOOGLE_SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+const GOOGLE_PRIVATE_KEY = (process.env.GOOGLE_PRIVATE_KEY ?? "")
+  .replace(/^"(.*)"$/, "$1")
+  .replace(/\\n/g, "\n");
 
 const RATE_LIMIT_MS = 60_000;
 const DUPLICATE_WINDOW_MS = 5 * 60_000;
@@ -110,6 +112,7 @@ async function getAccessToken(): Promise<string> {
 
   const tokenData = await tokenRes.json();
   if (!tokenData.access_token) {
+    console.error("Google OAuth error:", JSON.stringify(tokenData));
     throw new Error("No se pudo obtener el access token de Google");
   }
   return tokenData.access_token;
