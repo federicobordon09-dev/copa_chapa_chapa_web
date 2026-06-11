@@ -14,6 +14,7 @@ const navLinks = [
 const dropdownItems = [
   { label: "Copa Chapa Chapa", href: "/copa-chapa-chapa" },
   { label: "Splits", href: "/splits" },
+  { label: "Campeones", href: "/campeones" },
 ];
 
 export default function Navbar() {
@@ -84,9 +85,9 @@ export default function Navbar() {
             onNavigate={close}
           />
           <li>
-            <span className="nav-cta nav-cta--closed">
-              Inscripciones cerradas
-            </span>
+            <Link href="/inscripcion" className="nav-cta" onClick={close}>
+              Inscribite
+            </Link>
           </li>
         </ul>
         <button

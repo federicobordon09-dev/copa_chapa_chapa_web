@@ -87,7 +87,6 @@ export default function CopaChapaChapaPage() {
               <div className="podio-block podio-block-2" />
             </div>
             <div className="podio-card podio-1">
-              <div className="podio-crown">👑</div>
               <div className="podio-pos">1</div>
               <div className="podio-name">Franco Perez</div>
               <div className="podio-pts">64 <span>pts</span></div>

@@ -8,8 +8,6 @@ const siteUrl = "https://copachapachapa.vercel.app";
 
 export const metadata: Metadata = {
   title: "Copa Chapa Chapa",
-  description:
-    "Copa Chapa Chapa — Campeonato oficial de simracing en Assetto Corsa. +60 pilotos, 4 fechas, formato de splits. Competí y sumate a la grilla más grande del país.",
   keywords: [
     "simracing",
     "assetto corsa",
@@ -29,8 +27,6 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Copa Chapa Chapa",
     title: "Copa Chapa Chapa",
-    description:
-      "Campeonato oficial de simracing en Assetto Corsa. +60 pilotos, formato de splits, 4 fechas. Competí en la copa más picante del país.",
     images: [
       {
         url: "/assets/images/banner.webp",
@@ -43,8 +39,6 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Copa Chapa Chapa",
-    description:
-      "Campeonato oficial de simracing en Assetto Corsa. +60 pilotos, 4 fechas.",
     images: ["/assets/images/banner.webp"],
   },
   robots: {
@@ -74,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" data-scroll-behavior="smooth">
       <body>
         <Navbar />
         {children}

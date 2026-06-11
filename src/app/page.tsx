@@ -5,8 +5,6 @@ import { top5Preview } from "@/data/standings";
 
 export const metadata: Metadata = {
   title: "Inicio",
-  description:
-    "Copa Chapa Chapa — Campeonato de simracing en Assetto Corsa. +60 pilotos compitiendo en la temporada 2026. Seguí la clasificación, el calendario y más.",
 };
 
 export default function HomePage() {
@@ -63,28 +61,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* TEMPORADA FINALIZADA */}
-      <div className="next-race">
-        <div className="container">
-          <div className="next-race-inner">
-            <div className="next-race-details">
-              <div className="next-race-label">🏁 Temporada finalizada</div>
-              <div className="next-race-name">Campeón: Franco Perez</div>
-              <div className="next-race-info">
-                64 pts · 4 fechas · 2 splits
-              </div>
-            </div>
-            <div className="hero-stat" style={{ textAlign: "center" }}>
-              <span className="hero-stat-number" style={{ fontSize: "2.5rem" }}>🏆</span>
-              <span className="hero-stat-label" style={{ color: "rgba(255,255,255,0.6)" }}>Copa Chapa Chapa · Temp. 1</span>
-            </div>
-            <Link href="/copa-chapa-chapa" className="btn btn-primary">
-              Ver clasificación final →
-            </Link>
-          </div>
-        </div>
-      </div>
 
       {/* STANDINGS PREVIEW */}
       <section className="section section-dark">

@@ -6,8 +6,6 @@ import { calendarEntries } from "@/data/calendar";
 
 export const metadata: Metadata = {
   title: "Calendario",
-  description:
-    "Calendario de la Copa Chapa Chapa 2026. 4 fechas de simracing en Assetto Corsa en circuitos argentinos e internacionales.",
 };
 
 export default function CalendarioPage() {
@@ -21,23 +19,6 @@ export default function CalendarioPage() {
         title="Calendario"
         subtitle={`4 Fechas · ${doneCount} Disputadas · ${remainingCount} Por correr`}
       />
-
-      {/* ÚLTIMA CARRERA */}
-      <div className="next-race">
-        <div className="container">
-          <div className="next-race-inner">
-            <div className="next-race-details">
-              <div className="next-race-label">🏁 Temporada finalizada</div>
-              <div className="next-race-name">Campeón: Franco Perez</div>
-              <div className="next-race-info">64 pts · 4 fechas disputadas</div>
-            </div>
-            <div className="hero-stat" style={{ textAlign: "center" }}>
-              <span className="hero-stat-number" style={{ fontSize: "2.5rem" }}>🏆</span>
-              <span className="hero-stat-label" style={{ color: "rgba(255,255,255,0.6)" }}>Copa Chapa Chapa · Temp. 1</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* LISTA DE FECHAS */}
       <section className="section section-dark">
@@ -82,50 +63,59 @@ export default function CalendarioPage() {
           </div>
           <div className="info-grid">
             <div className="info-block">
-              <span className="info-block-icon">🕘</span>
+              <span className="info-block-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </span>
               <div className="info-block-title">Horario</div>
               <div className="info-block-text">
                 Las carreras se disputan los lunes a las 21:30 hs (hora Argentina, ART UTC-3). Conectarse al servidor 10 minutos antes.
               </div>
             </div>
             <div className="info-block">
-              <span className="info-block-icon">✂️</span>
+              <span className="info-block-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </span>
               <div className="info-block-title">División en Splits</div>
               <div className="info-block-text">
                 Antes de cada fecha, los pilotos se agrupan en splits según tiempos de clasificación. Cada split corre por separado con su propia grilla.
               </div>
             </div>
             <div className="info-block">
-              <span className="info-block-icon">📊</span>
+              <span className="info-block-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </span>
               <div className="info-block-title">Puntos por fecha</div>
               <div className="info-block-text">
                 Los 12 primeros de cada split suman puntos a la tabla general. El ganador se lleva 25 pts y el 12° se lleva 1 pt. Cada punto cuenta.
               </div>
             </div>
             <div className="info-block">
-              <span className="info-block-icon">🔴</span>
+              <span className="info-block-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </span>
               <div className="info-block-title">Transmisión en vivo</div>
               <div className="info-block-text">
                 Las fechas se transmiten en vivo desde los canales de Twitch de los organizadores. Seguí la acción en tiempo real.
               </div>
             </div>
           </div>
-          <div style={{ marginTop: "var(--space-md)", display: "flex", gap: "var(--space-sm)", flexWrap: "wrap" }}>
-            <a href="https://www.twitch.tv/tomikka" target="_blank" rel="noopener noreferrer"
-               style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-heading)", fontSize: "var(--fs-small)", fontWeight: 700, letterSpacing: "0.06em", color: "#9146ff", background: "rgba(145,70,255,0.08)", border: "1px solid rgba(145,70,255,0.2)", padding: "0.5rem 1.2rem", borderRadius: 999, transition: "all 0.2s ease", textDecoration: "none" }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#9146ff"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
-              Ver en Twitch · Tomikka
-            </a>
-            <a href="https://www.twitch.tv/maticunial" target="_blank" rel="noopener noreferrer"
-               style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontFamily: "var(--font-heading)", fontSize: "var(--fs-small)", fontWeight: 700, letterSpacing: "0.06em", color: "#9146ff", background: "rgba(145,70,255,0.08)", border: "1px solid rgba(145,70,255,0.2)", padding: "0.5rem 1.2rem", borderRadius: 999, transition: "all 0.2s ease", textDecoration: "none" }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#9146ff"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
-              Ver en Twitch · Maticunial
-            </a>
-          </div>
         </div>
       </section>
 
-      <Footer showOrganizadores />
+      <Footer />
     </>
   );
 }
