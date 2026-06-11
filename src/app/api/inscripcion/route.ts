@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const GOOGLE_SHEET_ID = process.env.GOOGLE_SHEET_ID;
 const GOOGLE_SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
 const GOOGLE_PRIVATE_KEY = (process.env.GOOGLE_PRIVATE_KEY ?? "")
-  .replace(/^"(.*)"$/, "$1")
+  .replace(/^["\s]+|["\s]+$/g, "")
   .replace(/\\n/g, "\n");
 
 const RATE_LIMIT_MS = 60_000;
