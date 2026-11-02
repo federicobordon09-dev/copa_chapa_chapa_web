@@ -2,52 +2,87 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 
 import Footer from "@/components/Footer";
-import { calendarEntries } from "@/data/calendar";
 
 export const metadata: Metadata = {
   title: "Calendario",
 };
 
 export default function CalendarioPage() {
-  const doneCount = calendarEntries.filter((e) => e.status === "done").length;
-  const remainingCount = calendarEntries.filter((e) => e.status !== "done").length;
-
   return (
     <>
       <PageHeader
-        eyebrow="Temporada 1"
+        eyebrow="Temporada finalizada"
         title="Calendario"
-        subtitle={`4 Fechas · ${doneCount} Disputadas · ${remainingCount} Por correr`}
+        subtitle="Próximamente · Nuevo fixture en preparación"
       />
 
-      {/* LISTA DE FECHAS */}
-      <section className="section section-dark">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-eyebrow">Fixture completo</span>
-            <h2 className="section-title">Todas las fechas</h2>
+      {/* PROXIMAMENTE */}
+      <section
+        className="section section-dark"
+        style={{ minHeight: "50vh", display: "flex", alignItems: "center" }}
+      >
+        <div className="container" style={{ textAlign: "center" }}>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 80,
+              height: 80,
+              borderRadius: "50%",
+              background: "rgba(245,196,0,0.08)",
+              border: "2px solid rgba(245,196,0,0.2)",
+              marginBottom: "1.5rem",
+              fontSize: "2.2rem",
+            }}
+          >
+            📅
           </div>
-          <div className="calendar-list">
-            {calendarEntries.map((entry) => (
-              <div className={`calendar-item ${entry.status}`} key={entry.num}>
-                <div className="cal-num">{entry.num}</div>
-                <div className="cal-info">
-                  <div className="cal-fecha-label">{entry.fechaLabel}</div>
-                  <div className="cal-name">{entry.name}</div>
-                  <div className="cal-circuit">
-                    <strong>{entry.circuit}</strong> · {entry.location}
-                  </div>
-                  <div className="cal-splits">
-                    {entry.splits.map((s, i) => (
-                      <span className="cal-split-tag" key={i}>{s}</span>
-                    ))}
-                  </div>
-                </div>
-                <span className={`cal-status status-${entry.status}`}>
-                  {entry.statusLabel}
-                </span>
-              </div>
-            ))}
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2.5rem, 8vw, 5rem)",
+              color: "var(--color-yellow)",
+              lineHeight: 1,
+              letterSpacing: "0.04em",
+              marginBottom: "0.75rem",
+            }}
+          >
+            PRÓXIMAMENTE
+          </h2>
+          <p
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontSize: "var(--fs-body)",
+              color: "var(--color-gray)",
+              letterSpacing: "0.04em",
+              lineHeight: 1.7,
+              maxWidth: 480,
+              margin: "0 auto var(--space-md)",
+            }}
+          >
+            La Temporada 1 finalizó. El nuevo calendario se publicará acá cuando
+            esté listo.
+          </p>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              fontFamily: "var(--font-heading)",
+              fontSize: "var(--fs-label)",
+              fontWeight: 700,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              color: "var(--color-yellow)",
+              background: "rgba(245,196,0,0.1)",
+              border: "1px solid rgba(245,196,0,0.25)",
+              padding: "0.5rem 1.2rem",
+              borderRadius: 999,
+            }}
+          >
+            <span style={{ fontSize: "0.6rem" }}>●</span>
+            Temporada 1 finalizada
           </div>
         </div>
       </section>

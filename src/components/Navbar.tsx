@@ -85,9 +85,13 @@ export default function Navbar() {
             onNavigate={close}
           />
           <li>
-            <Link href="/inscripcion" className="nav-cta" onClick={close}>
+            <span
+              className="nav-cta nav-cta--closed"
+              aria-disabled="true"
+              title="Inscripciones cerradas"
+            >
               Inscribite
-            </Link>
+            </span>
           </li>
         </ul>
         <button
